@@ -4,7 +4,7 @@ import User from "lucide-react/dist/esm/icons/user";
 import { NavLink } from "react-router-dom";
 import "./navbar.css";
 import { useState } from "react";
-import useCart from "/src/context/useCart";
+import useCart from "/src/components/cart/useCart";
 
 
 const Navbar = ()=>{

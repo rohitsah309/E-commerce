@@ -1,4 +1,4 @@
-import useCart from "/src/context/useCart";
+import useCart from "/src/components/cart/useCart";
 import "./cart.css"
 function CartPage(){
     
@@ -40,7 +40,7 @@ function CartPage(){
                                     <div className="qtn">
                                         <button onClick={() => decreaseQty(item.id)}>-</button>
                                         <span>{item.quantity}</span>
-                                        <button  button onClick={() => increaseQty(item.id)}>+</button>
+                                        <button onClick={() => increaseQty(item.id)}>+</button>
                                     </div>
                                     <div className="remove" onClick={() => removeFromCart(item.id)}>
                                             🗑

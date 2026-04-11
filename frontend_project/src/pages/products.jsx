@@ -7,7 +7,7 @@ import monitorImg from "../assets/asus_monitor.jpg";
 import keyboardImg from "../assets/keyboard.png";
 import chargerImg from "../assets/charger.webp";
 import airpodsImg from "../assets/airpods.jpeg";
-import useCart from "/src/context/useCart";
+import useCart from "/src/components/cart/useCart"
 
 const products = [
     {
