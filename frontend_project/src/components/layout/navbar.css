@@ -1,0 +1,122 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+.navbar{
+    height: 35px;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background-color: black;
+    color: white;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.nav-links{
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: 0.3s;
+    transition: 0.3s;
+}
+
+.nav-links a.active {
+    color: #00f5d4;
+}
+
+
+.nav-links a:hover{
+    color: #00ffcc;
+}
+
+.nav-right{
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.search-box{
+    display: flex;
+    align-items: center;
+    background: #111837;
+    padding: 6px 12px;
+    border-radius: 8px;
+    gap: 8px;
+    position: relative;
+}
+
+.search-box input{
+    background: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    color: white;
+    padding: 8px 35px 8px 10px;
+}
+
+.search-icon{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.search-icon:hover{
+    color: #00f5d4;
+}
+
+.cart{
+    cursor: pointer;
+    font-size: 22px;
+    position: relative;
+}
+
+.cart-count{
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background: #c59122;
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+}
+
+.cart:hover{
+    color: #00f5d4;
+}
+
+
+.account{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.account:hover {
+    color: #00f5d4;
+}

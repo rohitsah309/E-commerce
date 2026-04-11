@@ -1,0 +1,56 @@
+.container{
+    height: 100vh;
+    background-color: #03010f;
+    display: flex;
+    align-items: center;
+    padding: 0 80px;
+    color: white;
+}
+
+.content{
+    max-width: 600px;
+}
+
+.badge{
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 20px;
+    background: rgba(0, 255, 200, 0.1);
+    color: #00f5c4;
+    font-size: 14px;
+}
+
+.container h1{
+    font-size: 56px;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #00f5c4, #4f8cff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.container p{
+    margin-top: 20px;
+    color: #9ca3af;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.home-button{
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+}
+
+.btn{
+    padding: 12PX 22px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    transition: 0.3s;
+}
