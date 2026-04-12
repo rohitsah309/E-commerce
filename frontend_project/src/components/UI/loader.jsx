@@ -1,5 +1,8 @@
 import { motion } from "framer-motion";
 
+
+console.log(motion)
+
 const Loader = () =>{
     return(
         <motion.div
@@ -9,8 +12,8 @@ const Loader = () =>{
         >
             <motion.div
                 className="spinner"
-                animate={{rotate:360}}
-                transition={{repeat:Infinity, duration:1, ease:"linear"}}
+                animate={{rotate: 360}}
+                transition={{repeat: Infinity, duration: 1, ease: "linear"}}
             />
         </motion.div>
     );

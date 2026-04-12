@@ -1,6 +1,5 @@
 import Navbar from "./components/layout/navbar";
 import { BrowserRouter, Routes, Route, useLocation} from "react-router-dom";
-import { useState, useEffect } from "react";
 import Loader from "./components/UI/loader";
 import Home  from "./pages/Home";
 import Products from "./pages/products";

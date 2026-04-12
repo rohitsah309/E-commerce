@@ -6,6 +6,8 @@ const pageVariants = {
   exit: { opacity: 0, y: -40 },
 };
 
+console.log(motion)
+
 const PageWrapper = ({ children }) => {
   return (
     <motion.div
