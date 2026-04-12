@@ -1,0 +1,39 @@
+.subscribe{
+    text-align: center;
+    padding: 80px 2px;
+    background: #0b0f19;
+    color: white;
+}
+
+.subscribe h2{
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.subscribe p{
+    color: #9ca3af;
+    margin-bottom: 30px;
+}
+
+.box{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.box input{
+    padding: 12px;
+    width: 300px;
+    border-radius: 8px;
+    border: none;
+    background: #1f2937;
+    color: white;
+}
+
+.box button{
+    background: #22c55e;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+}

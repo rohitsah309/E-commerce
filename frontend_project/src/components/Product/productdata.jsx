@@ -14,7 +14,7 @@ const productsdata = [
         name: "Monitor III A.N.C Black",
         rating:4.4,
         reviews: 2341,
-        price:2999,
+        price:29999,
         image: headphoneImg
     },
     {
