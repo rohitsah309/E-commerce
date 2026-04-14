@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "./AuthPage.css";
+import { FaXTwitter, FaFacebook } from "react-icons/fa6";
+import { FcGoogle } from "react-icons/fc";
 
 const AuthPage = () => {
   const [isSignIn, setIsSignIn] = useState(true);
@@ -231,13 +233,13 @@ const AuthPage = () => {
 
         <div className="social-container">
           <button className="social-btn">
-            <span>🌐</span> Google
+            <FcGoogle /> Google
           </button>
           <button className="social-btn">
-            <span>🐙</span> GitHub
+            <FaFacebook /> Facebook
           </button>
           <button className="social-btn">
-            <span>🐦</span> Twitter
+            <FaXTwitter /> X
           </button>
         </div>
 
