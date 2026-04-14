@@ -1,14 +1,16 @@
 import "./ProductCard.css"
 import useCart from "../../components/cart/useCart"
 import ShoppingCart from "lucide-react/dist/esm/icons/shopping-cart";
-
+import { useNavigate } from "react-router-dom";
 
 function ProductCard({item}){
+    const navigate = useNavigate();
 
     const {addToCart} = useCart();
    
     return(
-        <div className="card">
+        <div className="card"
+            onClick={() => navigate(`/product/${item.id}`)}>
             {item.tag && item.tag.trim() !== "" &&(
             <span className="tag">{item.tag}</span>
             )}
@@ -34,7 +36,8 @@ function ProductCard({item}){
                         )}
                     </div>
 
-                    <button className="cart-btn" onClick={()=> {
+                    <button className="cart-btn" onClick={(e)=> {
+                        e.stopPropagation();
                         addToCart(item);
                         }}>
                         <ShoppingCart size ={18} />

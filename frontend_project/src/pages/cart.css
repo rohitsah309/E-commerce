@@ -2,7 +2,7 @@
     color: white;
     background: #0f172a;
     min-height: 100vh;
-    padding: 40px;
+    padding: 50px;
 }
 
 .cart-page h1{
@@ -52,6 +52,7 @@
 .cart-container{
     display: flex;
     gap: 30px;
+    padding-top: 30px;
 }
 
 .cart-items{

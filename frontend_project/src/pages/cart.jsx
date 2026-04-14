@@ -10,7 +10,8 @@ function CartPage(){
     const {cart, increaseQty, decreaseQty, removeFromCart} = useCart();
 
     const total = cart.reduce(
-        (sum, item) => sum + item.price * item.quantity,
+        (sum, item) =>
+            sum + (Number(item.price) || Number(item.price?.value) || 0) * (item.quantity || 1),
         0
     );
 
@@ -37,15 +38,15 @@ function CartPage(){
                                     <img src= {item.image} alt = {item.name} />
 
                                     <div className="details">
-                                        <p className="brand">{item.brand}</p>
-                                        <h3>{item.name}</h3>
-                                        <p className="price">₹{item.price}</p>
+                                        <p className="brand">{typeof item.brand === "object" ? item.brand.name : item.brand}</p>
+                                        <h3>{item.name?.title || item.name}</h3>
+                                        <p className="price">₹{typeof item.price === "object" ? item.price.value : item.price}</p>
                                     </div>
 
                                     <div className="action">
                                         <div className="qtn">
                                             <button onClick={() => decreaseQty(item.id)}>-</button>
-                                            <span>{item.quantity}</span>
+                                            <span>{item.quantity || 1}</span>
                                             <button onClick={() => increaseQty(item.id)}>+</button>
                                         </div>
                                         <div className="remove" onClick={() => removeFromCart(item.id)}>

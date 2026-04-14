@@ -1,15 +1,18 @@
 import Search from "lucide-react/dist/esm/icons/search";
 import ShoppingCart from "lucide-react/dist/esm/icons/shopping-cart";
-import User from "lucide-react/dist/esm/icons/user";
 import { NavLink } from "react-router-dom";
 import "./navbar.css";
 import { useState } from "react";
 import useCart from "/src/components/cart/useCart";
+import { useNavigate } from "react-router-dom";
+import UserMenu from "./UserMenu";
 
 
 const Navbar = ()=>{
     const{cart} = useCart()
-    const [query, SetQuery] = useState("")
+    const [query, setQuery] = useState("")
+
+    const navigate = useNavigate();
 
     const totalItems = cart.reduce(
         (sum, item) => sum + item.quantity,
@@ -18,7 +21,9 @@ const Navbar = ()=>{
 
     const handleSearch = (e) =>{
         e.preventDefault();
-        console.log("Search:", query)
+    if (!query.trim()) return;
+
+    navigate(`/products?q=${query}`)
     };
     return(
         <nav>
@@ -42,16 +47,14 @@ const Navbar = ()=>{
                         type="text"
                         placeholder="search..."
                         value={query}
-                        onChange={(e) => SetQuery(e.target.value)}
+                        onChange={(e) => setQuery(e.target.value)}
                         />
-                        <Search size ={18} className="search-icon" />
+                        <button type="submit" className="search-btn">
+                            <Search size ={18} />
+                        </button>
                     </form>
 
-
-                    <div className="account">
-                        <User size = {20}/>
-                    </div>
-
+                    <UserMenu/>
 
                     <NavLink to="/cart"  className="cart">
                         <ShoppingCart/>

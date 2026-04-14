@@ -16,7 +16,7 @@ function Home(){
                     </h1>
                     <p>
                     Discover cutting-edge electronics, gaming gear, and accessories.
-            Curated for tech enthusiasts who demand the best. 
+                    Curated for tech enthusiasts who demand the best. 
                     </p>
                     <div className="home-button">
                         <button className="btn primary" onClick={()=> navigate("/products")}>Shop Now →</button>

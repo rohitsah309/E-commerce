@@ -3,15 +3,29 @@ import { useState } from "react";
 import productsdata from "../components/Product/productdata";
 import ProductCard from "../components/Product/ProductCard";
 import PageWrapper from "../components/UI/PageWrapper";
+import { useLocation } from "react-router-dom";
 
 
 
 function Products() {
     const [selectCategory, setSelectCategory] = useState("All");
-    
-    const filterProducts = 
-    selectCategory === "All"
-    ? productsdata: productsdata.filter((p) => p.category.toLowerCase()  === selectCategory.toLowerCase());
+    const location = useLocation();
+
+    const params = new URLSearchParams(location.search);
+    const searchQuery = params.get("q") || "";
+
+
+    const filterProducts = productsdata.
+    filter((p) =>
+        selectCategory === "All"
+            ? true
+            : (p.category || "").toLowerCase() === selectCategory.toLowerCase()
+    )
+    .filter((p) =>
+        `${p.name || ""} ${p.brand || ""} ${p.category || ""}`
+        .toLowerCase()
+        .includes(searchQuery.toLowerCase())
+    );
     
     return(
         <PageWrapper>
@@ -31,9 +45,13 @@ function Products() {
                 </div>
 
                 <div className="product-grid">
-                    {filterProducts.map((item) => (
-                        <ProductCard key={item.id} item={item} />
-                    ))}
+                    {filterProducts.length === 0 ? (
+                        <p>No product found</p>
+                    ) : (
+                        filterProducts.map((item) => (
+                            <ProductCard key={item.id} item = {item} />
+                        ))
+                    )}
                 </div>
             </div>
         </PageWrapper>  
