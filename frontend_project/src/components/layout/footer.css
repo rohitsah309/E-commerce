@@ -7,11 +7,11 @@ footer {
 
 .footer-container {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1.2fr; /* better balance */
+  grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
   gap: 60px;
   border-bottom: 1px solid #1f2937;
   padding-bottom: 40px;
-  align-items: flex-start; /* 🔥 important fix */
+  align-items: flex-start;
 }
 
 .footer-title {
