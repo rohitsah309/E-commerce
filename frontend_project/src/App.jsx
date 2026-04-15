@@ -11,6 +11,8 @@ import ProductDetails from "./components/Product/ProductDetails";
 import ToastProvider from "./components/UI/ToastProvider";
 import Footer from "./components/layout/footer";
 import AuthPage from "./components/layout/AuthPage";
+import Checkout from "./components/layout/CheckoutPage";
+import Success from "./components/layout/Success";
 
 
 function AnimateRoutes() {
@@ -27,6 +29,8 @@ function AnimateRoutes() {
           <Route path="/contact" element={<Contact/>} />
           <Route path="/product/:id" element={<ProductDetails />} />
           <Route path="/auth" element={<AuthPage />} />
+          <Route path="/Checkout" element={<Checkout />} />
+          <Route path="/success" element={<Success />} />
         </Routes>
       </AnimatePresence>
     </>

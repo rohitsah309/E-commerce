@@ -79,7 +79,7 @@ function CartPage(){
                                 <span>Total</span>
                                 <span>₹{total}</span>
                             </div>
-                            <button className="checkout">Checkout</button>
+                            <button className="checkout" onClick={() => navigate("/Checkout")}>Checkout</button>
                         </div>
                     </div>
                 )}

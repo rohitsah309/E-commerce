@@ -70,7 +70,7 @@ function CartProvider({children}){
                 removeFromCart,
                 clearCart,
                 increaseQty,
-                decreaseQty
+                decreaseQty,
                 }}>
             {children}
         </CartContext.Provider>
