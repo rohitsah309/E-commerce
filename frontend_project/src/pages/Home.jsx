@@ -8,7 +8,7 @@ function Home(){
     const navigate = useNavigate()
     return(
         <PageWrapper>
-            <section className="container">
+            <section className="home-container">
                 <div className="content">
                     <span className="badge">✨ New Arrivals — Spring 2026</span>
                     <h1>Next-Gen Tech, <br/> 

@@ -2,7 +2,7 @@
     color: white;
     background: #0f172a;
     min-height: 100vh;
-    padding: 50px;
+    padding: 100px 80px;
 }
 
 .cart-page h1{
@@ -51,7 +51,8 @@
 
 .cart-container{
     display: flex;
-    gap: 30px;
+    gap: 40px;
+    align-items: flex-start;
     padding-top: 30px;
 }
 
@@ -65,13 +66,14 @@
     background: #071124;
     border: 1px solid #1e293b;
     padding: 20px;
+    gap: 20px;
     border-radius: 16px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .cart-card img{
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
     object-fit: cover;
     border-radius: 10px;
 }
@@ -144,7 +146,10 @@
 }
 
 .cart-summary{
+    position: sticky;
     flex: 1;
+    top: 120px;
+    max-width: 380px;
     background: #071124;
     border: 1px solid #1e293b;
     padding: 25px;
@@ -185,4 +190,97 @@
     border-radius: 8px;
     margin-top: 10px;
     cursor: pointer;
+}
+
+
+
+@media (max-width: 1024px) {
+  .cart-page {
+    padding: 80px 40px;
+  }
+
+  .cart-container {
+    flex-direction: column;
+  }
+
+  .cart-summary {
+    position: static;
+    max-width: 100%;
+  }
+    .cart-card {
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    gap: 12px;
+    padding: 14px;
+  }
+  .action {
+    margin-left: auto;  
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+   .cart-card img {
+    width: 70px;
+    height: 70px;
+  }
+  .cart-items {
+  width: 100%; 
+}
+
+  .details h3 {
+    font-size: 15px;
+  }
+
+  .price {
+    font-size: 15px;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .cart-page {
+    padding: 70px 20px;
+  }
+  .cart-items {
+  width: 100%; 
+}
+
+  .cart-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .cart-card img {
+    width:60px;
+    height: auto;
+  }
+
+  .action {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+  }
+
+  .cart-page h1 {
+    font-size: 24px;
+  }
+
+   .qtn button {
+    width: 24px;
+    height: 24px;
+  }
+
+  .qtn span {
+    font-size: 13px;
+  }
+
+  .remove {
+    font-size: 16px;
+  }
+
 }

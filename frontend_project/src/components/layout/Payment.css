@@ -1,12 +1,14 @@
 .payment-card {
     flex: 2;
+    width: 100%;
+    max-width: 900px;
     background: #0b0f17;
-    padding: 30px;
+    padding: 50px;
     border-radius: 20px;
 }
 
 .pay-btn {
-    margin-top: 70px;
+    margin-top: 30px;
     width: 100%;
     padding: 16px;
     border-radius: 12px;
@@ -14,4 +16,41 @@
     background: linear-gradient(90deg, #00ffc3, #00d9ff);
     font-weight: 600;
     cursor: pointer;
+}
+
+
+.pay-btn {
+  transition: 0.3s;
+}
+
+.pay-btn:hover {
+  transform: translateY(-2px);
+}
+
+
+@media (max-width: 1024px) {
+  .payment-card {
+    max-width: 100%;
+    padding: 25px;
+  }
+
+  .pay-btn {
+    padding: 15px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .payment-card {
+    padding: 20px;
+  }
+
+  .payment-card h2 {
+    font-size: 20px;
+  }
+
+  .pay-btn {
+    padding: 14px;
+    font-size: 14px;
+  }
 }

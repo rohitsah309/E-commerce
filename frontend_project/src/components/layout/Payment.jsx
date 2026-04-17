@@ -1,17 +1,21 @@
 import React from "react";
+import { useContext } from "react";
+import { CartContext } from "../cart/CartContext";
 import "./Payment.css";
 
 const PaymentStep = ({ total }) => {
+  const { cart, removePurchasedItems } = useContext(CartContext);
 
   const handleRazorpay = () => {
     const options = {
       key: "rzp_test_SdsxaNYsNwTjSf",
-      amount: total * 100, // in paise
+      amount: total * 100, 
       currency: "INR",
       name: "Voltex",
       description: "Order Payment",
       handler: function (response) {
         console.log(response)
+        removePurchasedItems(cart);
         window.location.href = "/success";
       },
       theme: {

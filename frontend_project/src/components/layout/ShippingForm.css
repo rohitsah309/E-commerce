@@ -1,6 +1,9 @@
 
 .shipping-card {
   flex: 2;
+  width: 100%;
+  max-width: 700px;
+  margin: auto;
   background: #0b0f17;
   padding: 32px;
   border-radius: 20px;
@@ -46,6 +49,7 @@
   color: #fff;
   font-size: 14px;
   transition: all 0.25s ease;
+  box-sizing: border-box;
 }
 
 
@@ -89,5 +93,37 @@
 
   .shipping-card {
     padding: 22px;
+  }
+
+   .shipping-card h2 {
+    font-size: 22px;
+  }
+
+  .shipping-card input {
+    font-size: 13px;
+    padding: 12px;
+  }
+
+  .continue-btn {
+    padding: 14px;
+    font-size: 14px;
+  }
+
+}
+
+
+
+@media (max-width: 1024px) {
+  .shipping-card {
+    max-width: 100%;
+    padding: 28px;
+  }
+
+  .row {
+    flex-wrap: wrap;   
+  }
+
+  .row > div {
+    flex: 1 1 45%;   
   }
 }

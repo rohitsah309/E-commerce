@@ -11,7 +11,11 @@ import UserMenu from "./UserMenu";
 const Navbar = ()=>{
     const{cart} = useCart()
     const [query, setQuery] = useState("")
+    const [menuOpen, setMenuOpen] = useState(false);
 
+    const closeMenu = () => {
+        setMenuOpen(false);
+    };
     const navigate = useNavigate();
 
     const totalItems = cart.reduce(
@@ -31,14 +35,15 @@ const Navbar = ()=>{
                <div className="logo">
                     <span>⚡</span>
                     <h1>VOLTEX</h1>
-                </div> 
+                </div>
+
             
 
-                <div className="nav-links">
-                    <NavLink to="/"  className={({isActive}) => isActive ? "active" : ""}>Home</NavLink>
-                    <NavLink to ="/products"  className={({isActive}) => isActive ? "active" : ""}>Products</NavLink>
-                    <NavLink to ="/contact"  className={({isActive}) => isActive ? "active" : ""}>Contact</NavLink>
-                    <NavLink to ="/cart"  className={({isActive}) => isActive ? "active" : ""}>Cart</NavLink>
+                <div className={ `nav-links ${menuOpen ? "active": ""}`}>
+                    <NavLink to="/" className={({isActive}) => isActive ? "active" : ""} onClick={closeMenu}>Home</NavLink>
+                    <NavLink to ="/products" className={({isActive}) => isActive ? "active" : ""} onClick={closeMenu}>Products</NavLink>
+                    <NavLink to ="/contact" className={({isActive}) => isActive ? "active" : ""} onClick={closeMenu}>Contact</NavLink>
+                    <NavLink to ="/cart" className={({isActive}) => isActive ? "active" : ""} onClick={closeMenu}>Cart</NavLink>
                 </div>
 
                 <div className="nav-right">
@@ -60,6 +65,9 @@ const Navbar = ()=>{
                         <ShoppingCart/>
                         <span className="cart-count">{totalItems}</span>
                     </NavLink>
+                    <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+                        ☰
+                    </div>
                 </div>
             </div>
         </nav>

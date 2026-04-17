@@ -35,6 +35,18 @@ function CartProvider({children}){
         });
     };
 
+
+    const removePurchasedItems = (items) => {
+        setCart((prevCart) => {
+            const updated = prevCart.filter(
+                (cartItem) =>
+                    !items.some((item) => item.id === cartItem.id)
+            );
+
+            return updated;
+        });
+    };
+
     const increaseQty =(id) =>{
         setCart((prev) =>
             prev.map((item) =>
@@ -71,6 +83,7 @@ function CartProvider({children}){
                 clearCart,
                 increaseQty,
                 decreaseQty,
+                removePurchasedItems
                 }}>
             {children}
         </CartContext.Provider>

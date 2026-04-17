@@ -10,13 +10,14 @@ nav{
     z-index: 1000;
 }
 .navbar{
-    height: 75px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 15px 30px;
     background-color: black;
     color: white;
+    flex-wrap: wrap;
+    position: relative;
 }
 
 .logo{
@@ -35,11 +36,54 @@ nav{
     font-size: 25px;
 }
 
+.hamburger {
+    font-size: 24px;
+    cursor: pointer;
+    display: block;
+    position: relative;
+}
+
 
 .nav-links{
-    display: flex;
-    gap: 25px;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    width: 160px;
+    border-radius: 10px;
+    display: none;
+    flex-direction: column;
+    background:black;
+    padding: 10px;
+    gap: 10px;
+    z-index: 10000;
 }
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+}
+
+.nav-links.active {
+  display: flex;
+}
+
+@media (min-width: 768px) {
+  .hamburger {
+    display: none;
+  }
+
+  .nav-links {
+    position: static;
+    display: flex !important;
+    flex-direction: row;
+    gap: 20px;
+    width: auto;
+    background: none;
+    padding: 0;
+  }
+}
+
 
 .nav-links a{
     text-decoration: none;
@@ -60,7 +104,7 @@ nav{
 
 .nav-right{
     display: flex;
-    gap: 25px;
+    gap: 10px;
     align-items: center;
 }
 
@@ -72,18 +116,27 @@ nav{
     border-radius: 8px;
     gap: 8px;
     position: relative;
+    width: 160px;
+}
+
+@media (min-width: 768px) {
+  .search-box {
+    width: auto;
+  }
 }
 
 .search-box input{
+    width: 100%;
     background: transparent;
     border: none;
     outline: none;
     box-shadow: none;
     color: white;
-    padding: 8px 35px 8px 10px;
+    padding: 8px 35px 8px 12px;
 }
 
 .search-btn{
+    position: relative;
     background: none;
     border: none;
     cursor: pointer;

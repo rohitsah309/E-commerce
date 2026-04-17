@@ -2,7 +2,7 @@
     background: #111827;
     border-radius: 16px;
     overflow: hidden;
-    position: relative;
+    width: 100%;
     transition: 0.3s;
 }
 .card:hover{
@@ -23,6 +23,8 @@
 }
 
 .image{
+    width: 100%;
+    aspect-ratio: 1/1;
     background: #1f2937;
     height: 220px;
     display: flex;
@@ -39,6 +41,17 @@
 
 .card-body{
     padding: 15px;
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .card-body h3 {
+    font-size: 14px;
+  }
+
+  .price {
+    font-size: 16px;
+  }
 }
 
 .brand{
@@ -82,4 +95,17 @@
     padding: 10px;
     border-radius: 10px;
     cursor: pointer;
+}
+
+
+
+@media (max-width: 768px) {
+  .price-row {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .cart-btn {
+    padding: 8px;
+  }
 }

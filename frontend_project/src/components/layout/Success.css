@@ -33,6 +33,7 @@
 .subtitle {
   color: #9ca3af;
   margin-bottom: 30px;
+  font-size: 16px;
 }
 
 
@@ -40,7 +41,8 @@
   background: #0b0f17;
   padding: 25px;
   border-radius: 16px;
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
   text-align: left;
   box-shadow: 0 0 20px rgba(0, 255, 195, 0.05);
 }
@@ -96,4 +98,55 @@
   color: #000;
   font-weight: 600;
   cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .success-container h1 {
+    font-size: 30px;
+  }
+
+  .order-card {
+    max-width: 360px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .success-container {
+    padding: 30px 15px;
+  }
+
+  .success-container h1 {
+    font-size: 24px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+  }
+
+  .order-card {
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  .row {
+    font-size: 14px;
+  }
+
+   .actions {
+    flex-direction: column;  
+    width: 100%;
+  }
+
+  .btn-outline,
+  .btn-primary {
+    width: 100%;
+    text-align: center;
+  }
+
+  .success-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 30px;
+  }
 }

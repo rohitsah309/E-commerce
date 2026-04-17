@@ -29,6 +29,20 @@
     gap: 20px;
 }
 
+/* TABLET */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .view-btn{
     text-decoration: none;
     color: #22C55E;

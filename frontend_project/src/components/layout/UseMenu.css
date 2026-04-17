@@ -32,11 +32,35 @@
   z-index: 999;
 }
 
+.dropdown.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+
 .user-menu:hover .dropdown {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
 }
+
+@media (max-width: 768px) {
+  .dropdown {
+    right: 0;
+    width: 150px;
+  }
+
+}
+
+@media (max-width: 1024px) {
+  .dropdown {
+    right: 0;
+    width: 170px;
+    top: 40px;
+  }
+}
+
 
 .dropdown a,
 .logout-btn {

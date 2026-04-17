@@ -198,13 +198,16 @@
 .divider-line {
   flex: 1;
   height: 1px;
-  background: #eeeeee;
+  background: #1e1e1e;
 }
 
 .divider-text {
   font-size: 13px;
   color: #bbb;
   white-space: nowrap;
+  margin: 0 12px; 
+  background: #fff; 
+  padding: 0 10px;
 }
 
 .social-container {
@@ -305,13 +308,54 @@
 }
 
 @media (max-width: 480px) {
-  .card {
-    padding: 28px 22px;
+  .account-card {
+    padding: 28px 20px;
     border-radius: 18px;
   }
 
-  .title {
+  .account-title {
     font-size: 22px;
+  }
+
+  .account-subtitle {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .account-container {
+    padding: 30px 20px;
+  }
+
+  .account-card {
+    max-width: 400px;
+    padding: 32px;
+  }
+   .account-container {
+    padding: 20px;
+  }
+
+  .account-card {
+    width: 100%;
+    max-width: 100%;
+    padding: 24px;
+  }
+
+  .account-logo {
+    font-size: 36px;
+  }
+  .account-title {
+    font-size: 20px;
+  }
+
+  .input {
+    padding: 12px 40px;
+    font-size: 13px;
+  }
+
+  .submit-btn {
+    padding: 12px;
+    font-size: 14px;
   }
 
   .social-container {
@@ -321,4 +365,6 @@
   .social-btn {
     width: 100%;
   }
+
+  
 }
