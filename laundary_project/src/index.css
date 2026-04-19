@@ -1,0 +1,107 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f6f9;
+  color: #333;
+}
+
+/* Container */
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Heading */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Card */
+.card {
+  background: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Inputs */
+input, select {
+  padding: 10px;
+  margin: 8px 5px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  outline: none;
+}
+
+input:focus, select:focus {
+  border-color: #4a90e2;
+}
+
+/* Buttons */
+button {
+  padding: 10px 15px;
+  border: none;
+  background: #4a90e2;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #357abd;
+}
+
+/* Order Card */
+.order-card {
+  border-left: 5px solid #4a90e2;
+}
+
+/* Status Colors */
+.status {
+  font-weight: bold;
+}
+
+.status.RECEIVED { color: #999; }
+.status.PROCESSING { color: orange; }
+.status.READY { color: green; }
+.status.DELIVERED { color: #4a90e2; }
+
+/* Dashboard */
+.dashboard {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.dashboard div {
+  flex: 1;
+  min-width: 150px;
+  background: #4a90e2;
+  color: white;
+  margin: 5px;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .dashboard {
+    flex-direction: column;
+  }
+
+  input, select {
+    width: 100%;
+  }
+}
