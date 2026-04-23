@@ -1,0 +1,370 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.account-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0b0f14;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+  margin-top: 70px;
+}
+
+.account-card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 40px;
+  width: 100%;
+  max-width: 440px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 0.4s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.account-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.account-logo {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+.account-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 6px;
+}
+
+.account-subtitle {
+  font-size: 14px;
+  color: #999;
+}
+
+
+.toggle-container {
+  display: flex;
+  background: #f0f0f5;
+  border-radius: 14px;
+  padding: 5px;
+  margin-bottom: 28px;
+  gap: 4px;
+}
+
+.toggle-btn {
+  flex: 1;
+  padding: 11px;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: transparent;
+  color: #999;
+}
+
+.toggle-btn.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(102, 126, 234, 0.45);
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 7px;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 14px;
+  font-size: 16px;
+  pointer-events: none;
+}
+
+.input {
+  width: 100%;
+  padding: 12px 44px 12px 42px;
+  border: 2px solid #e8e8e8;
+  border-radius: 12px;
+  font-size: 14px;
+  color: #333;
+  background: #fafafa;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.12);
+  background: #fff;
+}
+
+.input.input-error {
+  border-color: #e74c3c;
+  box-shadow: 0 0 0 4px rgba(231, 76, 60, 0.1);
+}
+
+.eye-btn {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #aaa;
+  padding: 0;
+  line-height: 1;
+  transition: color 0.2s;
+}
+
+.eye-btn:hover {
+  color: #667eea;
+}
+
+.error-msg {
+  font-size: 12px;
+  color: #e74c3c;
+  margin-top: 6px;
+  padding-left: 2px;
+}
+
+.forgot-link {
+  text-align: right;
+  margin-top: 8px;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 6px;
+  letter-spacing: 0.5px;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+}
+
+.submit-btn:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
+}
+
+.submit-btn:active {
+  transform: translateY(0px);
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 22px 0;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background: #1e1e1e;
+}
+
+.divider-text {
+  font-size: 13px;
+  color: #bbb;
+  white-space: nowrap;
+  margin: 0 12px; 
+  background: #fff; 
+  padding: 0 10px;
+}
+
+.social-container {
+  display: flex;
+  gap: 12px;
+}
+
+.social-btn {
+  flex: 1;
+  padding: 11px 8px;
+  border: 2px solid #eee;
+  border-radius: 12px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  color: #555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+  border-color: #667eea;
+  color: #667eea;
+  background: #f5f6ff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+}
+
+.footer-text {
+  text-align: center;
+  font-size: 13px;
+  color: #999;
+  margin-top: 22px;
+}
+
+.link {
+  color: #667eea;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.link:hover {
+  color: #764ba2;
+  text-decoration: underline;
+}
+
+.success-box {
+  text-align: center;
+  padding: 24px 0;
+}
+
+.success-icon {
+  font-size: 64px;
+  margin-bottom: 18px;
+  animation: bounce 0.6s ease;
+}
+
+@keyframes bounce {
+  0%   { transform: scale(0.5); opacity: 0; }
+  70%  { transform: scale(1.1); }
+  100% { transform: scale(1);   opacity: 1; }
+}
+
+.success-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 10px;
+}
+
+.success-text {
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 26px;
+}
+
+.account-back-btn {
+  background: none;
+  border: 2px solid #667eea;
+  color: #667eea;
+  padding: 11px 28px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.account-back-btn:hover {
+  background: #667eea;
+  color: #fff;
+}
+
+@media (max-width: 480px) {
+  .account-card {
+    padding: 28px 20px;
+    border-radius: 18px;
+  }
+
+  .account-title {
+    font-size: 22px;
+  }
+
+  .account-subtitle {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .account-container {
+    padding: 30px 20px;
+  }
+
+  .account-card {
+    max-width: 400px;
+    padding: 32px;
+  }
+   .account-container {
+    padding: 20px;
+  }
+
+  .account-card {
+    width: 100%;
+    max-width: 100%;
+    padding: 24px;
+  }
+
+  .account-logo {
+    font-size: 36px;
+  }
+  .account-title {
+    font-size: 20px;
+  }
+
+  .input {
+    padding: 12px 40px;
+    font-size: 13px;
+  }
+
+  .submit-btn {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .social-container {
+    flex-direction: column;
+  }
+
+  .social-btn {
+    width: 100%;
+  }
+
+  
+}

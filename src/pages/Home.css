@@ -1,0 +1,106 @@
+.home-container{
+    width: 100%;
+    min-height: 100vh;
+    background:
+      radial-gradient(circle at 70% 50%, rgba(79,140,255,0.15), transparent 40%),
+      radial-gradient(circle at 30% 50%, rgba(0,245,196,0.1), transparent 40%),
+      #020617;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 120px 80px;
+    color: white;
+
+}
+
+.content{
+    max-width: 600px;
+    padding-left: 50px;
+ 
+}
+
+.badge{
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 20px;
+    background: rgba(0, 255, 200, 0.1);
+    color: #00f5c4;
+    font-size: 14px;
+}
+
+.home-container h1{
+    font-size: 56px;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #00f5c4, #4f8cff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home-container p{
+    margin-top: 20px;
+    color: #9ca3af;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.home-button{
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn{
+    padding: 12PX 22px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn.primary{
+    background: #a5b6ab;
+    color: black;
+}
+
+
+@media (max-width: 768px) {
+  .home-container {
+    padding: 100px 20px ;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .content {
+    max-width: 100%;
+  }
+
+  .home-container h1 {
+    font-size: 32px;
+  }
+
+  .home-container p {
+    font-size: 14px;
+  }
+
+  .home-button {
+    justify-content: center;
+  }
+}
+
+
+@media (max-width: 1024px) {
+  .home-container {
+    padding: 100px 40px;
+  }
+
+  .home-container h1 {
+    font-size: 42px;
+  }
+}

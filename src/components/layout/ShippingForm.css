@@ -1,0 +1,129 @@
+
+.shipping-card {
+  flex: 2;
+  width: 100%;
+  max-width: 700px;
+  margin: auto;
+  background: #0b0f17;
+  padding: 32px;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0, 255, 195, 0.08);
+}
+
+
+.shipping-card h2 {
+  font-size: 26px;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+
+.shipping-card label {
+  display: block;
+  font-size: 12px;
+  color: #9ca3af;
+  margin-bottom: 6px;
+  margin-top: 10px;
+  letter-spacing: 0.5px;
+}
+
+
+.row {
+  display: flex;
+  gap: 15px;
+}
+
+.row > div{
+    flex: 1;
+    min-width: 0;
+}
+
+
+.shipping-card input {
+  width: 100%;
+  padding: 14px 16px;
+  margin-bottom: 14px;
+  border-radius: 12px;
+  border: 1px solid #1a1f2c;
+  background: #05080f;
+  color: #fff;
+  font-size: 14px;
+  transition: all 0.25s ease;
+  box-sizing: border-box;
+}
+
+
+.shipping-card input::placeholder {
+  color: #6b7280;
+}
+
+
+.shipping-card input:focus {
+  outline: none;
+  border-color: #00ffc3;
+  box-shadow: 0 0 12px rgba(0, 255, 195, 0.25);
+}
+
+
+.continue-btn {
+  width: 100%;
+  padding: 16px;
+  margin-top: 15px;
+  border-radius: 14px;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  background: linear-gradient(90deg, #00ffc3, #00d9ff);
+  color: #000;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+
+.continue-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 255, 195, 0.35);
+}
+
+
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+  }
+
+  .shipping-card {
+    padding: 22px;
+  }
+
+   .shipping-card h2 {
+    font-size: 22px;
+  }
+
+  .shipping-card input {
+    font-size: 13px;
+    padding: 12px;
+  }
+
+  .continue-btn {
+    padding: 14px;
+    font-size: 14px;
+  }
+
+}
+
+
+
+@media (max-width: 1024px) {
+  .shipping-card {
+    max-width: 100%;
+    padding: 28px;
+  }
+
+  .row {
+    flex-wrap: wrap;   
+  }
+
+  .row > div {
+    flex: 1 1 45%;   
+  }
+}
