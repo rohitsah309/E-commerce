@@ -1,16 +1,30 @@
 import { useState, useEffect } from "react";
-import { CartContext } from "./CartContext";
+import getCartKey, { CartContext } from "./CartContext";
 
 function CartProvider({children}){
 
     const[cart, setCart] = useState(() => {
-        const saved = localStorage.getItem("cart");
-        return saved ? JSON.parse(saved) : [];
+        const key = getCartKey();
+        return JSON.parse(localStorage.getItem(key)) || [];
     });
 
     useEffect(() => {
-        localStorage.setItem("cart", JSON.stringify(cart))
+        const key = getCartKey();
+        localStorage.setItem(key, JSON.stringify(cart))
     }, [cart]);
+
+    useEffect(() => {
+        const handleAuthChange = () => {
+            const key = getCartKey();
+            const newCart = JSON.parse(localStorage.getItem(key)) || [];
+            setCart(newCart);
+        };
+
+        window.addEventListener("authChanged", handleAuthChange);
+
+        return () =>
+            window.removeEventListener("authChanged", handleAuthChange);
+    }, []);
 
     const addToCart = (product, qty = 1) => {
         setCart((prev) => {

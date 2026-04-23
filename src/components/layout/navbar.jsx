@@ -2,7 +2,7 @@ import Search from "lucide-react/dist/esm/icons/search";
 import ShoppingCart from "lucide-react/dist/esm/icons/shopping-cart";
 import { NavLink } from "react-router-dom";
 import "./navbar.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import useCart from "/src/components/cart/useCart";
 import { useNavigate } from "react-router-dom";
 import UserMenu from "./UserMenu";
@@ -17,6 +17,20 @@ const Navbar = ()=>{
         setMenuOpen(false);
     };
     const navigate = useNavigate();
+    const [user, setUser] = useState(null);
+
+    useEffect(() => {
+        const checkUser = () => {
+            const storedUser = JSON.parse(localStorage.getItem("currentUser"));
+            setUser(storedUser);
+        };
+
+        checkUser();
+
+         window.addEventListener("authChanged", checkUser);
+
+        return () => window.removeEventListener("authChanged", checkUser);
+    }, []);
 
     const totalItems = cart.reduce(
         (sum, item) => sum + item.quantity,
@@ -59,7 +73,7 @@ const Navbar = ()=>{
                         </button>
                     </form>
 
-                    <UserMenu/>
+                    <UserMenu user={user} setUser={setUser} />
 
                     <NavLink to="/cart"  className="cart">
                         <ShoppingCart/>
