@@ -44,6 +44,7 @@ const Navbar = ()=>{
     navigate(`/products?q=${query}`)
     };
     return(
+        <>
         <nav>
             <div className="navbar">
                <div className="logo">
@@ -54,6 +55,7 @@ const Navbar = ()=>{
             
 
                 <div className={ `nav-links ${menuOpen ? "active": ""}`}>
+                    <div className="close-btn" onClick={closeMenu}>✖</div>
                     <NavLink to="/" className={({isActive}) => isActive ? "active" : ""} onClick={closeMenu}>Home</NavLink>
                     <NavLink to ="/products" className={({isActive}) => isActive ? "active" : ""} onClick={closeMenu}>Products</NavLink>
                     <NavLink to ="/contact" className={({isActive}) => isActive ? "active" : ""} onClick={closeMenu}>Contact</NavLink>
@@ -85,6 +87,8 @@ const Navbar = ()=>{
                 </div>
             </div>
         </nav>
+        {menuOpen && <div className="overlay" onClick={closeMenu}></div>}
+        </>
     )
 }
 

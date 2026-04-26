@@ -11,7 +11,7 @@
   cursor: pointer;
 }
 
-.user-icon:hover{
+.user-icon.active{
     color: #00f5d4;
 }
 
@@ -24,11 +24,6 @@
   border-radius: 10px;
   padding: 10px 0;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(10px);
-  transition: 0.3s ease;
   z-index: 999;
 }
 
@@ -39,11 +34,7 @@
 }
 
 
-.user-menu:hover .dropdown {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
+
 
 @media (max-width: 768px) {
   .dropdown {

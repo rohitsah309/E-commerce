@@ -13,6 +13,8 @@ const SignPage = () => {
     name: "",
     email: "",
     phone: "",
+    gender: "",
+    dob: "",
     password: "",
     confirmPassword: "",
   });
@@ -58,6 +60,14 @@ const SignPage = () => {
       newErrors.email = "Email is required";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       newErrors.email = "Enter a valid email address";
+    }
+
+    if(!isSignIn && !formData.gender) {
+      newErrors.gender = "Select gender";
+    }
+
+    if (!isSignIn && !formData.dob) {
+      newErrors.dob = "Date of birth is required";
     }
 
     if (!formData.password) {
@@ -131,6 +141,8 @@ const handleSubmit = (e) => {
       name: formData.name,
       email: formData.email,
       phone: formData.phone,
+      gender: formData.gender,
+      dob: formData.dob,
       password: formData.password,
     };
 
@@ -252,15 +264,45 @@ const switchMode = () => {
                   <p className="error-msg">⚠ {errors.phone}</p>
                 )}
               </div>
+
+
+              <div className="dob-row">
+                <div className="form-group">
+                  <label className="label">Gender</label>
+                  <div className="input-wrapper">
+                    <span className="input-icon">👤</span>
+                    <select
+                      name="gender"
+                      value={formData.gender}
+                      onChange={handleChange}
+                      className={`input ${errors.gender ? "input-error" : ""}`}
+                    >
+                      <option value= "">Select</option>
+                      <option value= "Male">Male</option>
+                      <option value= "Female">Female</option>
+                      <option value= "Trans">Trans</option>
+                    </select>
+                  </div>
+                  {errors.gender && <p className="error-msg">⚠ {errors.gender}</p>}
+                </div>
+                <div className="form-group">
+                  <label className="label">Date of Birth</label>
+                  <div className="input-wrapper">
+                    <span className="input-icon">📅</span>
+                    <input
+                      type="date"
+                      name="dob"
+                      value={formData.dob}
+                      onChange={handleChange}
+                      className= {`input ${errors.dob ? "input-error" : ""}`}
+                    />
+                  </div>
+                  {errors.dob && <p className="error-msg">⚠ {errors.dob}</p>}
+                </div>
+              </div>
               
               </>
-            
-              
-            
-            
             )}
-
-          
 
             <div className="form-group">
               <label className="label">Email Address</label>
@@ -281,6 +323,7 @@ const switchMode = () => {
             </div>
 
 
+            
             <div className="form-group">
               <label className="label">Password</label>
               <div className="input-wrapper">

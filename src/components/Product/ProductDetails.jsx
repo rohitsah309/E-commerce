@@ -39,7 +39,7 @@ const ProductDetails = () => {
                         ⭐{product.rating} ({product.reviews})
                     </p>
 
-                    <div className="price-row">
+                    <div className="pricedet-row">
                         <span className="price">₹{product.price}</span>
                         {product.oldPrice && (
                             <span className="old-price">₹{product.oldPrice}</span>

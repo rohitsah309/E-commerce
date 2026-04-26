@@ -75,10 +75,11 @@ function CartProvider({children}){
         setCart((prev) =>
             prev.map((item) =>
                 item.id === id
-                ? {...item, quantity: Math.max(( item.quantity || 1) -1, 1)}
+                ? {...item, quantity: Math.max(( item.quantity || 1) -1)}
                 :item
             )
-        )
+            .filter((item) => item.quantity > 0)
+        );
     }
 
     const removeFromCart = (id) =>{

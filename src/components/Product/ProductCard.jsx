@@ -2,11 +2,25 @@ import "./ProductCard.css"
 import useCart from "../../components/cart/useCart"
 import ShoppingCart from "lucide-react/dist/esm/icons/shopping-cart";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 function ProductCard({item}){
     const navigate = useNavigate();
+    const {cart, addToCart, increaseQty, decreaseQty} = useCart();
+    const cartItem = cart.find(cartitem => cartitem.id === item.id);
 
-    const {addToCart} = useCart();
+    const handleAddToCart = (product) => {
+        const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+        if (!isLoggedIn) {
+            toast.error("Please login first");
+            navigate("/auth");
+            return;
+        }
+
+        addToCart(product);
+        toast.success("Item added to cart");
+    };
    
     return(
         <div className="card"
@@ -35,13 +49,35 @@ function ProductCard({item}){
                             <span className="old">₹{item.oldPrice}</span>
                         )}
                     </div>
+                    
+                    {!cartItem ? (
+                        <button className="cart-btn" onClick={(e)=> {
+                            e.stopPropagation();
+                            handleAddToCart(item)
+                            }}>
+                            <ShoppingCart size ={18} />
+                        </button>
+                    ):(
+                        <div 
+                            className="qty-box"
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <button onClick={(e) => {
+                                e.stopPropagation();
+                                decreaseQty(item.id);
+                            }}>
+                                -
+                            </button>
+                            <span>{cartItem.quantity}</span>
+                            <button onClick={(e) => {
+                                e.stopPropagation();
+                                increaseQty(item.id);
+                            }}>
+                                +
+                            </button>
+                        </div>
 
-                    <button className="cart-btn" onClick={(e)=> {
-                        e.stopPropagation();
-                        addToCart(item);
-                        }}>
-                        <ShoppingCart size ={18} />
-                     </button>
+                    )}
                 </div>
             </div>
         </div>

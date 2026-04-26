@@ -7,6 +7,8 @@ function UserMenu({ user, setUser }) {
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
 
+
+
   useEffect(() => {
     if (!user) {
       const storedUser = JSON.parse(localStorage.getItem("currentUser"));
@@ -15,6 +17,20 @@ function UserMenu({ user, setUser }) {
       }
     }
   }, [user, setUser]);
+
+  useEffect(() => {
+    const handleClickOutside = () => {
+      setOpen(false);
+    };
+
+    if (open) {
+      document.addEventListener("click", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [open]);
 
   const handleLogout = () => {
     localStorage.removeItem("isLoggedIn");
@@ -27,12 +43,15 @@ function UserMenu({ user, setUser }) {
   return (
     <div className="user-menu">
       <User
-        className="user-icon"
-        onClick={() => setOpen(!open)}
+        className={`user-icon ${open ? "active" : ""}`}
+        onClick={(e) => {
+          e.stopPropagation();
+          setOpen(prev => !prev)
+        }}
       />
 
       {open && (
-        <div className="dropdown">
+        <div className="dropdown" onClick={(e) => e.stopPropagation()}>
 
           {user ? (
             <>
@@ -40,17 +59,23 @@ function UserMenu({ user, setUser }) {
                 👋 Hello, <b>{user.name}</b>
               </p>
 
-              <Link to="/orders">Your Orders</Link>
-              <Link to="/Account">Account</Link>
-              <Link to="/coupons">Coupons</Link>
+              <Link to="/orders" onClick={() => setOpen(false)}>Your Orders</Link>
+              <Link to="/Account" onClick={() => setOpen(false)}>Account</Link>
+              <Link to="/coupons" onClick={() => setOpen(false)}>Coupons</Link>
 
-              <button className="logout-btn" onClick={handleLogout}>
+              <button 
+                className="logout-btn" 
+                onClick={() =>{
+                  handleLogout();
+                  setOpen(false);
+                }}
+              >
                 Logout
               </button>
             </>
           ) : (
             <>
-              <Link to="/auth">Sign In / Sign Up</Link>
+              <Link to="/auth" onClick={() => setOpen(false)}>Sign In / Sign Up</Link>
             </>
           )}
 

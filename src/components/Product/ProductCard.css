@@ -4,6 +4,7 @@
     overflow: hidden;
     width: 100%;
     transition: 0.3s;
+    cursor: pointer;
 }
 .card:hover{
     transform: translateY(-5px);
@@ -97,6 +98,44 @@
     cursor: pointer;
 }
 
+.qty-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #120617;
+  border-radius: 10px;
+  padding: 6px;
+  min-width: 90px;
+  height: 38px;
+  transition: all 0.3s ease;
+}
+
+.qty-box button {
+  background: #0f172a;
+  color: white;
+  border: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.qty-box span {
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.qty-box button:hover {
+  background: #1f2937;
+}
+
+.cart-btn,
+.qty-box {
+  transition: all 0.3s ease;
+}
+
 
 
 @media (max-width: 768px) {
@@ -109,3 +148,4 @@
     padding: 8px;
   }
 }
+

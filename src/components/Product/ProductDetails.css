@@ -86,9 +86,9 @@
     font-size: 14px;
 }
 
-.price-row{
+.pricedet-row{
     display: flex;
-    align-items: center;
+    align-items: baseline;
     gap: 12px;
     margin: 10px 0;
 }
@@ -101,6 +101,7 @@
 .old-price{
     text-decoration: line-through;
     color: #64748b;
+    font-size: 16px; 
 }
 
 .desc{

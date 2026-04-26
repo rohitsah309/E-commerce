@@ -1,0 +1,182 @@
+
+.af-overlay {
+  position: fixed;
+  top: 40px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* Modal */
+.af-modal {
+  width: 520px;
+  max-height: 85vh;
+  overflow-y: auto;
+  background: #0b0f14;
+  border-radius: 12px;
+  padding: 20px;
+  color: #fff;
+}
+
+/* Header */
+.af-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.af-close {
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/* Body */
+.af-body label {
+  display: block;
+  margin-top: 14px;
+  font-size: 14px;
+  color: #d1d5db;
+}
+
+.af-body input,
+.af-body select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 6px;
+  border: 1px solid #2d3748;
+  background: #020617;
+  color: #fff;
+  outline: none;
+}
+
+/* Focus glow */
+.af-body input:focus,
+.af-body select:focus {
+  border-color: #14b8a6;
+  box-shadow: 0 0 0 2px rgba(20,184,166,0.3);
+}
+
+.af-body small {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+/* Row */
+.af-row {
+  display: flex;
+  gap: 10px;
+}
+
+.af-row div {
+  flex: 1;
+}
+
+/* Hide default checkbox */
+.custom-check input {
+  display: none;
+}
+
+/* Circle */
+.checkmark {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #14b8a6;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+/* Checked state (inner dot) */
+.custom-check input:checked + .checkmark::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: #14b8a6;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Align properly */
+.af-checkbox {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.af-checkbox span{
+    font-size: 15px;
+}
+
+.af-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 14px;
+  margin-top: 25px;
+}
+.af-cancel {
+  background: #0f141a;
+  border: 1px solid #2a2f3a;
+  color: #e5e7eb;
+  padding: 10px 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.af-cancel:hover {
+  background: #111827;
+  border-color: #374151;
+}
+
+.af-submit {
+  background: #14b8a6;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.af-submit:hover {
+  background: #0d9488;
+}
+
+/* Hide scrollbar completely */
+.af-modal::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+.af-modal {
+  scrollbar-width: none; /* Firefox */
+}
+
+
+
+@media (max-width: 768px) {
+
+  .af-footer,
+  .pf-footer {
+    flex-direction: column-reverse;
+  }
+
+  .af-submit,
+  .pf-submit,
+  .af-cancel,
+  .pf-cancel {
+    width: 100%;
+  }
+
+}
