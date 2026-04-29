@@ -59,7 +59,7 @@ function UserMenu({ user, setUser }) {
                 👋 Hello, <b>{user.name}</b>
               </p>
 
-              <Link to="/orders" onClick={() => setOpen(false)}>Your Orders</Link>
+              <Link to="/Orders" onClick={() => setOpen(false)}>Your Orders</Link>
               <Link to="/Account" onClick={() => setOpen(false)}>Account</Link>
               <Link to="/coupons" onClick={() => setOpen(false)}>Coupons</Link>
 

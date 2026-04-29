@@ -14,6 +14,7 @@ import SignPage from "./components/layout/SignPage";
 import Checkout from "./components/layout/CheckoutPage";
 import Success from "./components/layout/Success";
 import Account from "./components/layout/Account";
+import Orders from "./components/layout/Orders";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -35,6 +36,7 @@ function AnimateRoutes() {
           <Route path="/Checkout" element={<Checkout />} />
           <Route path="/success" element={<Success />} />
           <Route path="/account" element={<Account />} />
+          <Route path="/Orders" element={<Orders />} />
         </Routes>
       </AnimatePresence>
       <ToastContainer position="top-right" autoClose={2000} />

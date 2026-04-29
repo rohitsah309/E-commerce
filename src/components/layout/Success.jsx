@@ -1,9 +1,12 @@
 import React from "react";
 import "./Success.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const SuccessPage = () => {
   const navigate = useNavigate();
+
+  const location = useLocation();
+  const order = location.state;
 
   return (
     <div className="success-container">
@@ -26,17 +29,17 @@ const SuccessPage = () => {
       <div className="order-card">
         <div className="row">
           <span>Order Number</span>
-          <span className="highlight">ORD-6DWGEI</span>
+          <span className="highlight">{order?.id}</span>
         </div>
 
         <div className="row">
           <span>Status</span>
-          <span className="status">📦 Processing</span>
+          <span className="status">📦 {order?.status}</span>
         </div>
 
         <div className="row">
           <span>Estimated Delivery</span>
-          <span>April 21, 2026</span>
+          <span>{order?.estimatedDelivery}</span>
         </div>
 
         <div className="divider"></div>
